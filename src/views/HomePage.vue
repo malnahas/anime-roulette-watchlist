@@ -1,7 +1,13 @@
 <script setup>
+import { ref } from 'vue'
 import AnimeCard from '@/components/AnimeCard.vue'
+
+const loading = ref(false)
+const error = ref('')
+
 const spin = () => {
-  console.log('Hello')
+  if (error.value.length > 0) error.value = ''
+  else error.value = 'Something wrong'
 }
 </script>
 
@@ -33,14 +39,17 @@ const spin = () => {
               </div>
               <button
                 type="button"
-                class="cursor-pointer rounded-full border border-slate-500/60 bg-slate-600/20 px-6 py-3 text-base font-black tracking-wide text-slate-100/90 hover:bg-slate-700/50"
+                class="cursor-pointer rounded-full border border-slate-500/30 bg-slate-500/20 px-6 py-3 text-base font-black tracking-wide text-slate-100/90 hover:bg-slate-700/50"
                 @click="spin"
               >
                 Spin
               </button>
             </div>
           </div>
-          <AnimeCard loading />
+          <AnimeCard
+            :loading="loading"
+            :error="error"
+          />
         </section>
       </div>
     </div>
