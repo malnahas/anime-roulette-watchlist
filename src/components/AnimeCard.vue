@@ -108,12 +108,12 @@ watch(
       </div>
 
       <div>
-        <h2 class="text-2xl font-black text-white">{{ anime.title }}</h2>
-        <p class="mt-1 text-sm text-slate-300">
-          Score: <span class="font-semibold text-amber-300">{{ anime.score ?? 'N/A' }}</span> ·
+        <h2 class="text-2xl font-black text-slate-200">{{ anime.title }}</h2>
+        <p class="mt-1 text-sm text-slate-500/90">
+          Score: <span class="font-semibold text-orange-300">{{ anime.score ?? 'N/A' }}</span> ·
           Episodes:
-          <span class="font-semibold text-cyan-300">{{ anime.episodes ?? 'Unknown' }}</span> ·
-          Rating: <span class="font-semibold text-pink-300">{{ anime.rating || 'Unknown' }}</span>
+          <span class="font-semibold text-cyan-200/90">{{ anime.episodes ?? 'Unknown' }}</span> ·
+          Rating: <span class="font-semibold text-yellow-300">{{ anime.rating || 'Unknown' }}</span>
         </p>
       </div>
 
